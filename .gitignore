@@ -2,3 +2,5 @@ env/
 .venv/
 requirements.txt
 .env
+files/
+.cache/
