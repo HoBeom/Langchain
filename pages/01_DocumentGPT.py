@@ -49,7 +49,7 @@ with st.sidebar:
                 st.error(f"❌ Invalid API Key")
                 st.session_state["key_test"] = False
         else:
-            st.error("❌ Invalid API Key")
+            st.success("✅ API Key is valid!")
 
     st.subheader("Upload File")
     file = st.file_uploader(
@@ -57,9 +57,7 @@ with st.sidebar:
         type=["pdf", "txt", "docx"],
     )
 
-if st.session_state["key_test"]:
-    st.info("🔑 API Key has been successfully tested!")
-else:
+if not st.session_state["key_test"]:
     st.error("⚠️ Please enter a valid OpenAI API Key to proceed.")
     st.stop()
 
@@ -94,6 +92,8 @@ def embed_file(file):
     with open(file_path, "wb") as f:
         f.write(file_content)
     cache_dir = LocalFileStore(f"./.cache/embeddings/{file.name}")
+    for chunk in cache_dir.yield_keys():
+        cache_dir.mdelete(chunk)
     splitter = CharacterTextSplitter.from_tiktoken_encoder(
         separator="\n",
         chunk_size=600,
@@ -166,4 +166,5 @@ if file:
 
 else:
     st.session_state["messages"] = []
+    st.info("🔑 API Key has been successfully tested!")
     st.info("📁 Upload a file to get started!")
