@@ -34,22 +34,22 @@ with st.sidebar:
     key = st.text_input("API Key", type="password")
     if "key_test" not in st.session_state:
         st.session_state["key_test"] = False
-    if not st.session_state["key_test"]:
-        try:
-            llm_test = ChatOpenAI(
-                model="gpt-4o-mini",
-                openai_api_key=key,
-                temperature=0.7,
-            )
-            llm_test([HumanMessage(content="Test connection.")])
-            st.success("✅ API Key is valid!")
-            st.session_state["key_test"] = True
-        except Exception as e:
-            st.write(e)
-            st.error(f"❌ Invalid API Key")
-            st.session_state["key_test"] = False
-    else:
-        st.error("❌ Invalid API Key")
+    if key != "":
+        if not st.session_state["key_test"]:
+            try:
+                llm_test = ChatOpenAI(
+                    model="gpt-4o-mini",
+                    openai_api_key=key,
+                    temperature=0.7,
+                )
+                llm_test([HumanMessage(content="Test connection.")])
+                st.success("✅ API Key is valid!")
+                st.session_state["key_test"] = True
+            except Exception:
+                st.error(f"❌ Invalid API Key")
+                st.session_state["key_test"] = False
+        else:
+            st.error("❌ Invalid API Key")
 
     st.subheader("Upload File")
     file = st.file_uploader(
@@ -61,6 +61,7 @@ if st.session_state["key_test"]:
     st.info("🔑 API Key has been successfully tested!")
 else:
     st.error("⚠️ Please enter a valid OpenAI API Key to proceed.")
+    st.stop()
 
 class ChatCallbackHandler(BaseCallbackHandler):
     message = ""
