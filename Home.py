@@ -11,5 +11,6 @@ st.markdown(
 
 - [ ] [DocumentGPT](/DocumentGPT)
 - [ ] [QuizGPT](/QuizGPT) 
+- [ ] [SiteGPT](/SiteGPT) 
 """
 )
