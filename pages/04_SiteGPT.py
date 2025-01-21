@@ -63,7 +63,7 @@ with st.sidebar:
 
 answers_prompt = ChatPromptTemplate.from_template(
     """
-    Using ONLY the following context answer the user's question. If you can't just say you don't know, don't make anything up.
+    Using ONLY the following context, answer the user’s question. You must analyze and extract all relevant information from the context to answer as accurately as possible. If the information can be logically inferred based on the provided details, you should do so. However, if there is insufficient data to answer the question, respond with “I don’t know” and nothing else.
                                                   
     Then, give a score to the answer between 0 and 5.
 
@@ -74,7 +74,7 @@ answers_prompt = ChatPromptTemplate.from_template(
     Context: {context}
                                                   
     Examples:
-                                                  
+    ---                                              
     Question: How far away is the moon?
     Answer: The moon is 384,400 km away.
     Score: 5
@@ -82,7 +82,7 @@ answers_prompt = ChatPromptTemplate.from_template(
     Question: How far away is the sun?
     Answer: I don't know
     Score: 0
-                                                  
+    ---                                              
     Your turn!
 
     Question: {question}
