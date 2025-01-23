@@ -1,0 +1,24 @@
+# XZ Backdoor Research
+
+## Overview
+The XZ backdoor refers to a malicious backdoor that was introduced to the Linux build of the xz utility within the liblzma library in versions 5.6.0 and later. This backdoor was discovered in early 2024 and raised significant concerns within the open-source community.
+
+## Key Articles
+
+### 1. [XZ Utils backdoor - Wikipedia](https://en.wikipedia.org/wiki/XZ_Utils_backdoor)
+- This article provides a comprehensive overview of the XZ Utils backdoor, detailing its introduction, impact, and the response from the community.
+
+### 2. [What we know about the xz Utils backdoor that almost infected the world - Ars Technica](https://arstechnica.com/security/2024/04/what-we-know-about-the-xz-utils-backdoor-that-almost-infected-the-world/)
+- This article discusses the implications of the backdoor and how it was discovered by a Microsoft developer.
+
+### 3. [ELI5: The recently discovered XZ backdoor - Reddit](https://www.reddit.com/r/explainlikeimfive/comments/1brf749/eli5_the_recently_discovered_xz_backdoor/)
+- A simplified explanation of the backdoor and its potential impact on secure connections.
+
+### 4. [XZ Utils Backdoor — Everything You Need to Know - Akamai Blog](https://www.akamai.com/blog/security-research/critical-linux-backdoor-xz-utils-discovered-what-to-know)
+- This blog post provides insights into the backdoor, its discovery, and recommendations for users.
+
+### 5. [What we need to take away from the XZ Backdoor - Reddit](https://www.reddit.com/r/linux/comments/1c29ptf/what_we_need_to_take_away_from_the_xz_backdoor/)
+- A discussion on the operational implications of the backdoor for Linux and BSD distributors.
+
+## Conclusion
+The XZ backdoor serves as a critical reminder of the importance of security in open-source software and the need for vigilance in software development and distribution.
