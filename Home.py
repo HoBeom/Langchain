@@ -9,8 +9,9 @@ st.markdown(
     """
     ## LangChain Streamlit Dashboard
 
-- [ ] [DocumentGPT](/DocumentGPT)
-- [ ] [QuizGPT](/QuizGPT) 
-- [ ] [SiteGPT](/SiteGPT) 
+- [X] [DocumentGPT](/DocumentGPT)
+- [X] [QuizGPT](/QuizGPT) 
+- [X] [SiteGPT](/SiteGPT) 
+- [X] [ResearchGPT](/ResearchGPT)
 """
 )
